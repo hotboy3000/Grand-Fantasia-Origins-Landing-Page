@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import '../../css/classesCard.css';
+import '../css/classesCard.css';
 export default function ClassesCard({
   path1,
   path2,
@@ -8,16 +8,14 @@ export default function ClassesCard({
   description
 }) {
   return (
-    <section className='flex w-full'>
-      <article className='left'>
+    <section className='flex justify-center w-full'>
+      <article className='flex'>
         <ul>
           <li>{className}</li>
           <li>{path1}</li>
           <li>{path2}</li>
         </ul>
-      </article>
 
-      <article className='right'>
         <Image
           src={image}
           alt={className}
