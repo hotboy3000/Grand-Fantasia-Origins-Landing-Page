@@ -7,7 +7,7 @@ import Footer from '../components/footer';
 
 export default function Main() {
   return (
-    <main>
+    <main className='flex flex-col justify-center items-center bg-background'>
       <Navbar />
       <Home />
       <News />

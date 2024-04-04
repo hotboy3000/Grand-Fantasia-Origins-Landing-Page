@@ -1,28 +1,102 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useRef, useEffect } from 'react';
+import '../css/navbar.css';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
+
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownRef]);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+    toggleDropdown();
+    // add logic here to change the language
+  };
+
   return (
-    <section className='flex mx-5 my-2'>
-      <ul className='flex justify-between items-center w-full text-2xl'>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Home</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>News</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Classes</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Features</li></Link>
-        <Link href='#'><li>
-          <Image
-            src='/Random-1818.jpg'
-            alt='Logo'
-            width={100}
-            height={24}
-            priority
-            className='rounded-full shadow-lg backdrop-blur-sm bg-black/50 shadow-black/50'
-          />
-        </li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Language</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Login</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Register</li></Link>
-        <Link href='#' className='px-4 py-3 rounded-full shadow-lg backdrop-blur-sm bg-blue-500/50 shadow-white/50'><li>Download</li></Link>
+    <section className='flex flex-col w-full max-w-[1250px]'>
+      <ul className='flex gap-6 justify-end py-2 pl-2 w-full'>
+        <Link href={'#'} className='navbarButton'>
+          <li>Sign Up</li>
+        </Link>
+        <Link href={'#'} className='navbarButton'>
+          <li>Login</li>
+        </Link>
+        <li className='relative' ref={dropdownRef}>
+          <button onClick={toggleDropdown} className='navbarButton'>
+            Language ▼
+          </button>
+          {isOpen && (
+            <ul className='absolute right-0 z-10 mt-2 bg-white rounded-md border shadow-md navbarDropdown'>
+              <li
+                onClick={() => handleLanguageChange('English')}
+                className='p-2 text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'
+              >
+                English
+              </li>
+              <li
+                onClick={() => handleLanguageChange('Spanish')}
+                className='p-2 text-center cursor-pointer hover:bg-navbar hover:text-button'
+              >
+                Spanish
+              </li>
+              <li
+                onClick={() => handleLanguageChange('French')}
+                className='p-2 text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'
+              >
+                Portuguese
+              </li>
+            </ul>
+          )}
+        </li>
+      </ul>
+
+      <ul className='flex gap-10 justify-between items-center navbarSecondary'>
+        <Link href={'#'}>
+          <li>
+            <Image
+              src={'/logo.jpg'}
+              alt='logo'
+              width={100}
+              height={100}
+              className='rounded-full'
+            />
+          </li>
+        </Link>
+        <ul className='flex gap-10 justify-center w-full text-2xl'>
+          <Link href={'#'} className='hover:underline hover:drop-shadow-lg'>
+            <li>Home</li>
+          </Link>
+          <Link href={'#'} className='hover:underline hover:drop-shadow-lg'>
+            <li>News</li>
+          </Link>
+          <Link href={'#'} className='hover:underline hover:drop-shadow-lg'>
+            <li>Classes</li>
+          </Link>
+          <Link href={'#'} className='hover:underline hover:drop-shadow-lg'>
+            <li>Features</li>
+          </Link>
+        </ul>
       </ul>
     </section>
   );

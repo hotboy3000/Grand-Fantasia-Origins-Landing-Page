@@ -13,7 +13,6 @@ export default function Classes() {
     if (isAnimating.current) return; // If animation is in progress, do not proceed
 
     isAnimating.current = true; // Set animation flag to true
-    gsap.to('.class-card', { display: 'none', duration: 0 });
     gsap.to(`#class-${index}`, {
       display: 'flex',
       duration: 1,
@@ -22,6 +21,7 @@ export default function Classes() {
         isAnimating.current = false; // Reset animation flag
       }
     });
+    gsap.to('.class-card', { display: 'none', duration: 0 });
   };
 
   return (
