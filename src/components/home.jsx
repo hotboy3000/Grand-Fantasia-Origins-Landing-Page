@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 export default function Home() {
   return (
-    <section className='relative z-0 my-5 w-full max-w-[1250px]'>
-      <div className='flex justify-center items-center h-screen max-h-[82vh]'>
+    <section className='relative z-0 my-5 w-full'>
+      <div className='flex justify-center items-center h-screen max-h-[84vh]'>
         <iframe
           src='https://www.youtube.com/embed/dQw4w9WgXcQ?si=QpyOXilYjzqjoUY9'
           title='YouTube video player'

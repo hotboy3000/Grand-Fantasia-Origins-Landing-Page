@@ -13,7 +13,9 @@ module.exports = {
       origins: '#57505c',
       background: '#b6b09a',
       navbar: '#4e4b44',
-      button: '#ebebec'
+      button: '#ebebec',
+      green: '#819a63',
+      white: '#dbd8cd'
     },
     extend: {
       backgroundImage: {

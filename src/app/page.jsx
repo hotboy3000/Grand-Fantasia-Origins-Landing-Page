@@ -7,12 +7,14 @@ import Footer from '../components/footer';
 
 export default function Main() {
   return (
-    <main className='flex flex-col justify-center items-center bg-background'>
+    <main className='flex flex-col justify-center items-center bg-green'>
       <Navbar />
       <Home />
-      <News />
-      <Classes />
-      <Features />
+      <section className='flex flex-col border-8 border-white bg-background'>
+        <News />
+        <Classes />
+        <Features />
+      </section>
       <Footer />
     </main>
   );

@@ -26,8 +26,7 @@
 }
 
 .navbarButton:hover,
-.navbarDropdown:hover,
-.navbarSecondary:hover {
+.navbarDropdown:hover {
   color: #333;
   -moz-box-shadow: inset 0px 0px 1px rgba(171, 158, 165, 1);
   -webkit-box-shadow: inset 0px 0px 1px rgba(171, 158, 165, 1);
