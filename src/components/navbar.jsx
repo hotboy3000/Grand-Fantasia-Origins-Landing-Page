@@ -43,8 +43,15 @@ export default function Navbar() {
           <li>Login</li>
         </Link>
         <li className='relative' ref={dropdownRef}>
-          <button onClick={toggleDropdown} className='navbarButton'>
-            Language ▼
+          <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
+            <Image
+              src={'/globe.svg'}
+              alt='globe'
+              width={20}
+              height={20}
+              title='globe'
+            />{' '}
+            Language
           </button>
           {isOpen && (
             <ul className='absolute right-0 z-10 mt-2 bg-white rounded-md border shadow-md navbarDropdown'>

@@ -24,7 +24,7 @@ export default function Features() {
   };
 
   return (
-    <section className='px-4'>
+    <section className='px-4 mb-9'>
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
         FEATURES
       </h1>
