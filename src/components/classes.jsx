@@ -14,15 +14,24 @@ export default function Classes() {
     if (isAnimating.current) return; // If animation is in progress, do not proceed
 
     isAnimating.current = true; // Set animation flag to true
+    gsap.to('.class-card', {
+      display: 'none',
+      duration: 0,
+      opacity: 0,
+      x: -100,
+      ease: 'power2.in'
+    });
+    setCurrentIndex(index);
     gsap.to(`#class-${index}`, {
       display: 'flex',
       duration: 1,
+      opacity: 1,
+      x: 0,
+      ease: 'back.inOut',
       onComplete: () => {
-        setCurrentIndex(index); // Update current index after animation completes
         isAnimating.current = false; // Reset animation flag
       }
     });
-    gsap.to('.class-card', { display: 'none', duration: 0 });
   };
 
   return (
@@ -32,7 +41,10 @@ export default function Classes() {
       </h1>
 
       <section className='flex justify-center py-5 mt-9 w-full h-full bg-white'>
-        <article className={`flex justify-center class-card warrior`} id='class-0'>
+        <article
+          className={`flex justify-center class-card warrior`}
+          id='class-0'
+        >
           <ClassesCard
             path1={'BERSERKER'}
             path2={'PALADIN'}
@@ -43,7 +55,10 @@ export default function Classes() {
           />
         </article>
 
-        <article className={`hidden justify-center class-card archer`} id='class-1'>
+        <article
+          className={`hidden justify-center class-card archer`}
+          id='class-1'
+        >
           <ClassesCard
             path1={'RANGER'}
             path2={'ASSASSIN'}
@@ -54,7 +69,10 @@ export default function Classes() {
           />
         </article>
 
-        <article className={`hidden justify-center class-card priest`} id='class-2'>
+        <article
+          className={`hidden justify-center class-card priest`}
+          id='class-2'
+        >
           <ClassesCard
             path1={'CLERIC'}
             path2={'SAGE'}
@@ -65,7 +83,10 @@ export default function Classes() {
           />
         </article>
 
-        <article className={`hidden justify-center class-card mage`} id='class-3'>
+        <article
+          className={`hidden justify-center class-card mage`}
+          id='class-3'
+        >
           <ClassesCard
             path1={'WIZARD'}
             path2={'NECROMANCER'}
@@ -76,7 +97,10 @@ export default function Classes() {
           />
         </article>
 
-        <article className={`hidden justify-center class-card mechanic`} id='class-4'>
+        <article
+          className={`hidden justify-center class-card mechanic`}
+          id='class-4'
+        >
           <ClassesCard
             path1={'DEMOLITIONIST'}
             path2={'ENGINEER'}
@@ -87,7 +111,10 @@ export default function Classes() {
           />
         </article>
 
-        <article className={`hidden justify-center class-card traveler`} id='class-5'>
+        <article
+          className={`hidden justify-center class-card traveler`}
+          id='class-5'
+        >
           <ClassesCard
             path1={'TIME TRAVELER'}
             path2={'VOID RUNNER'}
@@ -101,7 +128,10 @@ export default function Classes() {
 
       <article className='flex justify-center mt-9 border-8 border-white bg-navbar'>
         <ul className='flex gap-5'>
-          <li onClick={() => showClass(0)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(0)}
+            className={`cursor-pointer ${currentIndex === 0 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/warrior-thumbs.png'}
               alt={'Warrior'}
@@ -109,7 +139,10 @@ export default function Classes() {
               height={100}
             />
           </li>
-          <li onClick={() => showClass(1)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(1)}
+            className={`cursor-pointer ${currentIndex === 1 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/archer-thumbs.png'}
               alt={'Archer'}
@@ -117,7 +150,10 @@ export default function Classes() {
               height={100}
             />
           </li>
-          <li onClick={() => showClass(2)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(2)}
+            className={`cursor-pointer ${currentIndex === 2 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/priest-thumbs.png'}
               alt={'Priest'}
@@ -125,7 +161,10 @@ export default function Classes() {
               height={100}
             />
           </li>
-          <li onClick={() => showClass(3)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(3)}
+            className={`cursor-pointer ${currentIndex === 3 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/mage-thumbs.png'}
               alt={'Mage'}
@@ -133,7 +172,10 @@ export default function Classes() {
               height={100}
             />
           </li>
-          <li onClick={() => showClass(4)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(4)}
+            className={`cursor-pointer ${currentIndex === 4 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/machinist-thumbs.png'}
               alt={'Machinist'}
@@ -141,7 +183,10 @@ export default function Classes() {
               height={100}
             />
           </li>
-          <li onClick={() => showClass(5)} className='cursor-pointer'>
+          <li
+            onClick={() => showClass(5)}
+            className={`cursor-pointer ${currentIndex === 5 ? '' : 'gray'}`}
+          >
             <Image
               src={'/classes/traveler-thumbs.png'}
               alt={'Warrior'}

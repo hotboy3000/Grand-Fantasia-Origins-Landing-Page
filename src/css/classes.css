@@ -43,3 +43,7 @@
   background-position: -20px;
   background-size: contain;
 }
+
+.gray {
+  filter: grayscale(90%);
+}
