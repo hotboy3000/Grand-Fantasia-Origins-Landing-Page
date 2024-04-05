@@ -1,0 +1,45 @@
+.warrior {
+  background-image: url('/classes/warriorbg.png');
+  background-repeat: no-repeat;
+  background-position: 20px;
+  background-size: contain;
+}
+
+.archer {
+  background-image: url('/classes/archerbg.png');
+  background-repeat: no-repeat;
+  background-position: -30px;
+  background-position-y: -15px;
+  background-size: contain;
+}
+
+.priest {
+  background-image: url('/classes/priestbg.png');
+  background-repeat: no-repeat;
+  background-position: -20px;
+  background-position-y: -15px;
+  background-size: contain;
+}
+
+.mage {
+  background-image: url('/classes/magebg.png');
+  background-repeat: no-repeat;
+  background-position: -30px;
+  background-position-y: -25px;
+  background-size: contain;
+}
+
+.mechanic {
+  background-image: url('/classes/machinistbg.png');
+  background-repeat: no-repeat;
+  background-position: 20px;
+  background-position-y: -5px;
+  background-size: contain;
+}
+
+.traveler {
+  background-image: url('/classes/keymaster.png');
+  background-repeat: no-repeat;
+  background-position: -20px;
+  background-size: contain;
+}
