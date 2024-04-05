@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Grand Fantasia Origins Landing Page
 
-## Getting Started
+Welcome to the Grand Fantasia Origins Landing Page repository! This repository contains the code for the website for the game Grand Fantasia Origins.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [About](#about)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Grand Fantasia Origins Landing Page is a simple yet elegant landing page designed to showcase the game Grand Fantasia Origins. It is built using Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- A register and login interface: Users can log in to the website and have their credentials saved to then download the game and if so they desire buy the in-game currency.
+- Smooth showcase of features: The website offers a clean and smooth showcase of it's features to the users.
+- Responsive design: The website is optimized for various screen sizes, ensuring a consistent experience across devices.
+- Smooth animations: The page includes subtle animations to enhance user engagement.
+- Interactive elements: Users can interact with various elements on the page, providing an immersive experience.
 
-To learn more about Next.js, take a look at the following resources:
+## Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can view a live demo of the landing page [SOON TM](#) [SOON TM].
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+To run the landing page locally, follow these steps:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clone this repository to your local machine using `git clone https://github.com/FerOuvina/Grand-Fantasia-Origins-Landing-Page.git`.
+2. Navigate to the project directory: `cd Grand-Fantasia-Origins-Landing-Page`.
+3. Run the command "npm run dev" to get starting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Usage
+
+Once you have the landing page running locally or deployed, you can:
+
+- Explore the various sections of the landing page to learn more about Grand Fantasia Origins.
+- Interact with the elements to experience the page fully.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
