@@ -26,7 +26,7 @@ export default function Main() {
           alt='divider'
           width={500}
           height={100}
-          className='self-center m-5'
+          className='self-center mt-8 mb-5'
         />
         <Features />
       </section>
