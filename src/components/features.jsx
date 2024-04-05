@@ -12,6 +12,12 @@ export default function Features() {
     '/Random-1822.jpg',
     '/Random-1822.jpg'
   ];
+  const texts = [
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 1',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 2',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 3',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 4'
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const isAnimating = useRef(false);
 
@@ -88,11 +94,7 @@ export default function Features() {
                 width={500}
                 height={500}
               />
-              <p className='p-4 max-w-96 bg-button'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat eius corrupti neque quasi hic aliquid alias ut,
-                obcaecati esse enim?
-              </p>
+              <p className='p-4 max-w-96 bg-button'>{texts[index]}</p>
             </li>
           ))}
         </ul>
