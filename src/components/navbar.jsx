@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <section className='flex flex-col w-full max-w-[1250px]'>
-      <ul className='flex gap-6 justify-end py-2 pl-2 w-full'>
+      <ul className='flex gap-2 justify-end py-2 pl-2 w-full'>
         <Link href={'#'} className='navbarButton'>
           <li>Sign Up</li>
         </Link>
@@ -76,6 +76,9 @@ export default function Navbar() {
             </ul>
           )}
         </li>
+        <Link href={'#'} className='navbarButton'>
+          <li>Download Now</li>
+        </Link>
       </ul>
 
       <ul className='flex gap-10 justify-between items-center navbarSecondary'>
@@ -103,6 +106,41 @@ export default function Navbar() {
           <Link href={'#'} className='hover:underline hover:drop-shadow-lg'>
             <li>Features</li>
           </Link>
+          <ul className='flex gap-5 self-center'>
+            <li>
+              <Link target='_blank' href={'https://discord.gg/SjVYmebK6P'}>
+                <Image
+                  src={'/discord.svg'}
+                  alt='discord'
+                  width={30}
+                  height={30}
+                  title='discord'
+                />
+              </Link>
+            </li>
+            <li>
+              <Link target='_blank' href={'#'}>
+                <Image
+                  src={'/instagram.svg'}
+                  alt='instagram'
+                  width={30}
+                  height={30}
+                  title='instagram'
+                />
+              </Link>
+            </li>
+            <li>
+              <Link target='_blank' href={'#'}>
+                <Image
+                  src={'/youtube.svg'}
+                  alt='twitter'
+                  width={30}
+                  height={30}
+                  title='youtube'
+                />
+              </Link>
+            </li>
+          </ul>
         </ul>
       </ul>
     </section>
