@@ -40,7 +40,7 @@ export default function Classes() {
         CLASSES
       </h1>
 
-      <section className='flex justify-center py-5 mt-9 w-full h-full bg-white'>
+      <section className='flex justify-center py-4 mt-9 w-full h-full bg-white'>
         <article
           className={`flex justify-center class-card warrior`}
           id='class-0'
@@ -105,7 +105,7 @@ export default function Classes() {
             path1={'DEMOLITIONIST'}
             path2={'ENGINEER'}
             job={'MECHANIC'}
-            image={'/classes/archer.png'}
+            image={'/classes/mechanic.png'}
             hometown={'Jale'}
             description={`Mechanics are half-man, half-machine specialized in armed combat and heavy weaponry. Their damage makes them a valued ally and ferocious enemy. At level 15 they advance to Machinist, and at level 30 they get to choose between Demolitionist or Engineer.`}
           />
@@ -119,7 +119,7 @@ export default function Classes() {
             path1={'TIME TRAVELER'}
             path2={'VOID RUNNER'}
             job={'DRIFTER'}
-            image={'/classes/archer.png'}
+            image={'/classes/wanderer.png'}
             hometown={'Ilya'}
             description={`The Wanderer is a versatile class that excels in both melee and ranged combat. They are adept at wielding Katanas and Key weapons, making them adaptable to different playstyles. At level 15 they advance to Drifter, and at level 30 they get to choose between Time Traveler or Void Runner.`}
           />
