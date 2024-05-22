@@ -1,8 +1,5 @@
-'use client';
-
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import Image from 'next/image';
 import '../css/features.css';
 
 export default function Features() {
@@ -53,12 +50,12 @@ export default function Features() {
   }, [currentIndex, images]);
 
   return (
-    <section className='px-4 mb-9 h-full'>
+    <section id='features' className='px-4 mb-9 h-full'>
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
         FEATURES
       </h1>
 
-      <article className='flex gap-10 justify-center py-5 mt-9 w-full bg-white'>
+      <article className='flex gap-10 justify-center px-3 py-5 mt-4 w-full bg-white'>
         {/* Buttons */}
         <ul className='flex flex-col justify-between'>
           {images.map((image, index) => (
@@ -69,7 +66,7 @@ export default function Features() {
               }`}
               onClick={() => swapImage(index)}
             >
-              <Image
+              <img
                 src={image}
                 alt={`Image ${index + 1}`}
                 width={70}
@@ -88,7 +85,7 @@ export default function Features() {
               className={`image ${currentIndex === index ? 'flex' : 'hidden'}`}
               id={`image-${index}`}
             >
-              <Image
+              <img
                 src={image}
                 alt={`Image ${index + 1}`}
                 width={500}

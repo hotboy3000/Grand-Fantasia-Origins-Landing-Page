@@ -1,32 +1,32 @@
-import Navbar from '../components/navbar';
-import Home from '../components/home';
-import News from '../components/news';
-import Classes from '../components/classes';
-import Features from '../components/features';
-import Footer from '../components/footer';
-import Image from 'next/image';
+import Navbar from './components/navbar';
+import Home from './components/home';
+import News from './components/news';
+import Classes from './components/classes';
+import Features from './components/features';
+import Footer from './components/footer';
+import './App.css';
 
-export default function Main() {
+function App() {
   return (
     <main className='flex flex-col justify-center items-center bg-green'>
       <Navbar />
       <Home />
       <section className='flex flex-col w-full max-w-[1250px] border-8 border-white bg-background'>
         <News />
-        <Image
+        <img
           src={'/divider-8557901.svg'}
           alt='divider'
           width={500}
           height={100}
-          className='self-center mb-5'
+          className='self-center'
         />
         <Classes />
-        <Image
+        <img
           src={'/divider-8557901.svg'}
           alt='divider'
           width={500}
           height={100}
-          className='self-center mt-8 mb-5'
+          className='self-center'
         />
         <Features />
       </section>
@@ -34,3 +34,5 @@ export default function Main() {
     </main>
   );
 }
+
+export default App;

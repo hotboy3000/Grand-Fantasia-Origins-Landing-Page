@@ -110,3 +110,15 @@
   font-weight: bold;
   border-radius: 8px;
 }
+
+.icons:hover {
+  opacity: .5;
+}
+
+.dis:disabled {
+  color: #999;
+}
+
+.dis:disabled:hover {
+  color: #e5e6e6;
+}

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 export default function Home() {
   return (
     <section className='relative z-0 my-5 w-full'>
@@ -14,11 +12,11 @@ export default function Home() {
           className='w-full h-full'
         ></iframe>
       </div>
-      <Link
+      <a
         href='#'
         className='absolute top-1/2 left-1/2 z-10 p-2 rounded-full shadow-lg backdrop-blur-sm -translate-x-1/2 -translate-y-1/2 bg-black/50 shadow-black/50'
       >
-        <Image
+        <img
           className='rounded-full shadow-lg backdrop-blur-sm bg-black/50 shadow-black/50'
           src='/logo.jpg'
           alt='Logo'
@@ -26,7 +24,7 @@ export default function Home() {
           height={300}
           priority
         />
-      </Link>
+      </a>
     </section>
   );
 }

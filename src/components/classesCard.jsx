@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+
 export default function ClassesCard({
   path1,
   path2,
@@ -7,6 +8,8 @@ export default function ClassesCard({
   hometown,
   description
 }) {
+  const { t } = useTranslation();
+
   return (
     <section className='flex justify-center w-full max-w-3xl'>
       <article className='flex'>
@@ -14,7 +17,7 @@ export default function ClassesCard({
           <ul className='flex flex-col gap-6 justify-center'>
             <li className='self-center text-5xl'>{job}</li>
             <li className='self-center'>
-              <Image src={'/divider-5318234.svg'} width={350} height={10} />
+              <img src={'/divider-5318234.svg'} width={350} height={10} />
             </li>
             <ul className='flex gap-20 justify-evenly text-2xl'>
               <li>{path1}</li>
@@ -22,17 +25,14 @@ export default function ClassesCard({
             </ul>
           </ul>
           <div className='flex flex-col gap-2'>
-            <span>Hometown: {hometown}</span>
+            <span>
+              {t('Hometown')}: {hometown}
+            </span>
             <p>{description}</p>
           </div>
         </div>
 
-        <Image
-          src={image}
-          alt={job}
-          width={300}
-          height={500}
-        />
+        <img src={image} alt={job} width={300} height={500} />
       </article>
     </section>
   );

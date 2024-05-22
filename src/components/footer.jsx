@@ -1,8 +1,4 @@
-'use client';
-
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import '../css/navbar.css';
 
 export default function Footer() {
@@ -36,59 +32,65 @@ export default function Footer() {
   return (
     <footer className='flex flex-col w-full bg-white max-w-[1250px]'>
       <section className='flex justify-evenly p-4 bg-origins'>
-        <Link href={'#'} className='p-2 text-2xl text-center Button'>
+        <a href={'#'} className='p-2 text-2xl text-center Button'>
           Register
-        </Link>
-        <Link href={'#'} className='p-2 text-2xl text-center Button'>
+        </a>
+        <a href={'#'} className='p-2 text-2xl text-center Button'>
           Download
-        </Link>
+        </a>
       </section>
       <section className='flex justify-center'>
         <ul className='flex justify-evenly items-center w-full'>
           <li>
-            <Link href={'#'}>
-              <Image src={'/logo.jpg'} alt='Random' width={100} height={100} />
-            </Link>
+            <a href={'#'}>
+              <img src={'/logo.jpg'} alt='Random' width={100} height={100} />
+            </a>
           </li>
           <li>© 2024 Grand Fantasia Origins - All rights reserved</li>
           <ul className='flex gap-5'>
             <li>
-              <Link href={'#'}>
-                <Image
+              <a href={'#'}>
+                <img
                   src={'/discord.svg'}
                   alt='discord'
                   width={40}
                   height={40}
                   title='discord'
+                  className='icons'
                 />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href={'#'}>
-                <Image
+              <a href={'#'}>
+                <img
                   src={'/instagram.svg'}
                   alt='instagram'
                   width={40}
                   height={40}
                   title='instagram'
+                  className='icons'
                 />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href={'#'}>
-                <Image
+              <a href={'#'}>
+                <img
                   src={'/youtube.svg'}
                   alt='twitter'
                   width={40}
                   height={40}
                   title='youtube'
+                  className='icons'
                 />
-              </Link>
+              </a>
             </li>
           </ul>
           <li className='relative' ref={dropdownRef}>
-            <button onClick={toggleDropdown} className='flex gap-2 navbarButton'>
-              <Image
+            <button
+              onClick={toggleDropdown}
+              className='flex gap-2 navbarButton'
+            >
+              <img
                 src={'/globe.svg'}
                 alt='globe'
                 width={20}

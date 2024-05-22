@@ -1,30 +1,34 @@
 import NewsCard from './newsCard';
+import { useTranslation } from 'react-i18next';
 
 export default function News() {
+  const { t } = useTranslation();
+
   return (
-    <section className='flex flex-col justify-center items-center px-4 w-full'>
+    <section
+      id='news'
+      className='flex flex-col justify-center items-center px-4 w-full'
+    >
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
-        NEWS
+        {t('News')}
       </h1>
 
-      <article className='flex flex-row gap-4 justify-around py-5 my-4 w-full h-full'>
+      <article className='flex flex-row gap-4 justify-around my-4 w-full h-full'>
         <NewsCard
-          title={'Increible titulo largo'}
-          description={
-            'Pero mira vos que descripcion mas descriptiva che no puede ser que haya tanta informacion en esta descripcion, obviamente todo esto es muy informativo y no es nada para rellenar el espacio vacio, no, como se te ocurre pensar en eso'
-          }
+          title={t('Title')}
+          description={t('Description')}
           image={'/Random-1822.jpg'}
           date={'12/12/12'}
         />
         <NewsCard
-          title={'Tremendo'}
-          description={'Lorem ipsum dolor sit amet'}
+          title={t('Title1')}
+          description={t('Description1')}
           image={'/Random-1822.jpg'}
           date={'12/12/12'}
         />
         <NewsCard
-          title={'Waos'}
-          description={'Waos'}
+          title={t('Title2')}
+          description={t('Description2')}
           image={'/Random-1822.jpg'}
           date={'12/12/12'}
         />

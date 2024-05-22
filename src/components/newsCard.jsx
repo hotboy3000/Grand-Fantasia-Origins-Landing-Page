@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import '../css/navbar.css';
 
 export default function NewsCard({ date, title, image, description }) {
   return (
     <section className='w-full flex-col max-w-[400] flex border-8 border-white bg-white'>
-      <Image
+      <img
         src={image}
         alt={title}
         width={400}
@@ -16,7 +15,9 @@ export default function NewsCard({ date, title, image, description }) {
           <h1 className='py-2 text-3xl font-bold'>{title}</h1>
           <p>{description}</p>
         </div>
-        <span className='px-1 mt-1 text-white date text-md bg-navbar'>{date}</span>
+        <span className='px-1 mt-1 text-white date text-md bg-navbar'>
+          {date}
+        </span>
       </div>
     </section>
   );
