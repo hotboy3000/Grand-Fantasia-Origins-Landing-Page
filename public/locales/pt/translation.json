@@ -43,5 +43,10 @@
   "VOID RUNNER": "CORREDOR DO VÁCUO",
   "DRIFTER": "ERRANTE",
   "ClassDescDrifter": "O Errante é uma classe versátil que se destaca tanto no combate corpo a corpo quanto à distância. Eles são hábeis no manejo de katanas e armas-chave, tornando-os adaptáveis a diferentes estilos de jogo. No nível 15, avançam para Errante, e no nível 30 podem escolher entre Viajante do Tempo ou Corredor do Vácuo.",
-  "Hometown": "Cidade natal"
+  "Hometown": "Cidade natal",
+  "FEATURES": "CARACTERÍSTICAS",
+  "TEXT1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 1",
+  "TEXT2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 2",
+  "TEXT3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 3",
+  "TEXT4": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 4"
 }

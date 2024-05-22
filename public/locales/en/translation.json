@@ -42,5 +42,10 @@
   "VOID RUNNER": "VOID RUNNER",
   "DRIFTER": "DRIFTER",
   "ClassDescDrifter": "The Wanderer is a versatile class that excels in both melee and ranged combat. They are adept at wielding Katanas and Key weapons, making them adaptable to different playstyles. At level 15 they advance to Drifter, and at level 30 they get to choose between Time Traveler or Void Runner.",
-  "Hometown": "Hometown"
+  "Hometown": "Hometown",
+  "FEATURES": "FEATURES",
+  "TEXT1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 1",
+  "TEXT2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 2",
+  "TEXT3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 3",
+  "TEXT4": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 4"
 }

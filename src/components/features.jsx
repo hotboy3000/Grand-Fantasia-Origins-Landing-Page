@@ -1,20 +1,21 @@
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { useTranslation } from 'react-i18next';
 import '../css/features.css';
 
 export default function Features() {
+  const { t } = useTranslation();
   const images = [
     '/Random-1822.jpg',
     '/Random-1822.jpg',
     '/Random-1822.jpg',
     '/Random-1822.jpg'
   ];
-  const texts = [
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 1',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 2',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 3',
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 4'
-  ];
+  const text1 = t('TEXT1');
+  const text2 = t('TEXT2');
+  const text3 = t('TEXT3');
+  const text4 = t('TEXT4');
+  const texts = [text1, text2, text3, text4];
   const [currentIndex, setCurrentIndex] = useState(0);
   const isAnimating = useRef(false);
 
@@ -52,7 +53,7 @@ export default function Features() {
   return (
     <section id='features' className='px-4 mb-9 h-full'>
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
-        FEATURES
+        {t('FEATURES')}
       </h1>
 
       <article className='flex gap-10 justify-center px-3 py-5 mt-4 w-full bg-white'>
