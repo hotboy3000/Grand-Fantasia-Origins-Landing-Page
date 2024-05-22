@@ -1,52 +1,27 @@
-import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../css/navbar.css';
 
 export default function Footer() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
-
-  const dropdownRef = useRef(null);
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [dropdownRef]);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleLanguageChange = (language) => {
-    setSelectedLanguage(language);
-    toggleDropdown();
-    // add logic here to change the language
-  };
+  const { t } = useTranslation();
 
   return (
     <footer className='flex flex-col w-full bg-white max-w-[1250px]'>
       <section className='flex justify-evenly p-4 bg-origins'>
         <a href={'#'} className='p-2 text-2xl text-center Button'>
-          Register
+          {t('Register')}
         </a>
         <a href={'#'} className='p-2 text-2xl text-center Button'>
-          Download
+          {t('Download')}
         </a>
       </section>
       <section className='flex justify-center'>
         <ul className='flex justify-evenly items-center w-full'>
           <li>
-            <a href={'#'}>
+            <a href={'/'}>
               <img src={'/logo.jpg'} alt='Random' width={100} height={100} />
             </a>
           </li>
-          <li>© 2024 Grand Fantasia Origins - All rights reserved</li>
+          <li>{t('Copyright')}</li>
           <ul className='flex gap-5'>
             <li>
               <a href={'#'}>
@@ -85,43 +60,6 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-          <li className='relative' ref={dropdownRef}>
-            <button
-              onClick={toggleDropdown}
-              className='flex gap-2 navbarButton'
-            >
-              <img
-                src={'/globe.svg'}
-                alt='globe'
-                width={20}
-                height={20}
-                title='globe'
-              />{' '}
-              Language
-            </button>
-            {isOpen && (
-              <ul className='absolute right-0 -top-[8rem] z-10 bg-white rounded-md border shadow-md navbarDropdown'>
-                <li
-                  onClick={() => handleLanguageChange('English')}
-                  className='p-2 text-center rounded-t-lg cursor-pointer hover:bg-navbar hover:text-button'
-                >
-                  English
-                </li>
-                <li
-                  onClick={() => handleLanguageChange('Spanish')}
-                  className='p-2 text-center cursor-pointer hover:bg-navbar hover:text-button'
-                >
-                  Spanish
-                </li>
-                <li
-                  onClick={() => handleLanguageChange('French')}
-                  className='p-2 text-center rounded-b-lg cursor-pointer hover:bg-navbar hover:text-button'
-                >
-                  Portuguese
-                </li>
-              </ul>
-            )}
-          </li>
         </ul>
       </section>
     </footer>
