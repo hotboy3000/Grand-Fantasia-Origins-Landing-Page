@@ -24,7 +24,7 @@ export default function Footer() {
           <li>{t('Copyright')}</li>
           <ul className='flex gap-5'>
             <li>
-              <a href={'#'}>
+              <a target='_blank' href={'https://discord.gg/SjVYmebK6P'}>
                 <img
                   src={'/discord.svg'}
                   alt='discord'

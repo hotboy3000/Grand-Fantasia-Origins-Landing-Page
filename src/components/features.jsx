@@ -51,7 +51,7 @@ export default function Features() {
   }, [currentIndex, images]);
 
   return (
-    <section id='features' className='px-4 mb-9 h-full'>
+    <section id='features' className='px-4 mb-4 h-full'>
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
         {t('FEATURES')}
       </h1>
