@@ -34,7 +34,7 @@ export default function Classes() {
   };
 
   return (
-    <section id='classes' className='flex flex-col justify-center px-4 w-full'>
+    <section id='/classes' className='flex flex-col justify-center px-4 w-full'>
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>
         {t('Classes')}
       </h1>

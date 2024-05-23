@@ -6,7 +6,7 @@ export default function News() {
 
   return (
     <section
-      id='news'
+      id='/news'
       className='flex flex-col justify-center items-center px-4 w-full'
     >
       <h1 className='px-4 py-1 mt-4 w-full text-3xl text-white border-8 border-white bg-navbar'>

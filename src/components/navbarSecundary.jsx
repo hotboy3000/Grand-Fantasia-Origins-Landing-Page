@@ -5,7 +5,7 @@ import { Link } from 'wouter';
 import gsap from 'gsap';
 import '../css/navbar.css';
 
-export default function Navbar() {
+export default function NavbarSecondary() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const { t, i18n } = useTranslation();
@@ -145,21 +145,21 @@ export default function Navbar() {
           <Link href={'/'} className='hover:underline hover:drop-shadow-lg'>
             <li>{t('HomeNav')}</li>
           </Link>
-          <a href={'#/news'} className='hover:underline hover:drop-shadow-lg'>
+          <Link href='/#/news' className='hover:underline hover:drop-shadow-lg'>
             <li>{t('NewsNav')}</li>
-          </a>
-          <a
-            href={'#/classes'}
+          </Link>
+          <Link
+            href={'/#/classes'}
             className='hover:underline hover:drop-shadow-lg'
           >
             <li>{t('ClassesNav')}</li>
-          </a>
-          <a
-            href={'#/features'}
+          </Link>
+          <Link
+            href={'/#/features'}
             className='hover:underline hover:drop-shadow-lg'
           >
             <li>{t('FeaturesNav')}</li>
-          </a>
+          </Link>
           <ul className='flex gap-5 self-center'>
             <li>
               <a target='_blank' href={'https://discord.gg/SjVYmebK6P'}>

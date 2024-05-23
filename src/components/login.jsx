@@ -1,0 +1,136 @@
+import Footer from './footer';
+import NavbarSecondary from './navbarSecundary';
+import DiscordWidget from './discordWidget';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import { useState } from 'react';
+import '../css/navbar.css';
+
+const MySwal = withReactContent(Swal);
+
+export default function Login() {
+  const [formData, setFormData] = useState({
+    usernameOrEmail: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const validateForm = () => {
+    let valid = true;
+    let errorMessages = [];
+
+    if (!formData.usernameOrEmail) {
+      errorMessages.push('Username or email is required');
+      valid = false;
+    }
+
+    if (formData.password.length < 8) {
+      errorMessages.push('Password must be at least 8 characters');
+      valid = false;
+    }
+
+    if (errorMessages.length > 0) {
+      MySwal.fire({
+        icon: 'error',
+        title: 'Validation Errors',
+        html: `<ul>${errorMessages
+          .map((msg) => `<li>${msg}</li>`)
+          .join('')}</ul>`,
+        position: 'bottom-right',
+        showConfirmButton: false,
+        timer: 3000,
+        toast: true,
+        timerProgressBar: true,
+        background: '#f8d7da',
+        iconColor: '#dc3545'
+      });
+    }
+
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Form data submitted:', formData);
+      // Send data to API
+    } else {
+      console.log('Form validation failed');
+    }
+  };
+
+  return (
+    <section className='flex flex-col w-full max-w-[1250px] justify-center items-center bg-green h-full'>
+      <NavbarSecondary />
+      <article className='my-5 w-full border-8 border-white bg-background'>
+        <div className='flex gap-4 justify-center items-center py-4'>
+          <div className='h-[300px] flex flex-col items-center my-4 border-8 border-white w-fit'>
+            <h1 className='px-4 py-2 w-full text-3xl text-white bg-navbar'>
+              Login to Grand Fantasia Origins
+            </h1>
+
+            <hr className='w-full border-4 border-white' />
+
+            <article className='flex gap-4 p-2'>
+              <button className='navbarButton'>Login with Discord</button>
+              <button className='navbarButton'>Login with Google</button>
+              <button className='navbarButton'>Login with Twitter</button>
+            </article>
+
+            <hr className='w-full border-4 border-white' />
+
+            <form
+              onSubmit={handleSubmit}
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-xl text-white bg-navbar'
+            >
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+                <label htmlFor='usernameOrEmail' className='text-right'>
+                  Username or Email:
+                </label>
+                <input
+                  type='text'
+                  id='usernameOrEmail'
+                  name='usernameOrEmail'
+                  value={formData.usernameOrEmail}
+                  onChange={handleChange}
+                  className='inputField'
+                />
+              </div>
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+                <label htmlFor='password' className='text-right'>
+                  Password:
+                </label>
+                <input
+                  type='password'
+                  id='password'
+                  name='password'
+                  value={formData.password}
+                  onChange={handleChange}
+                  className='inputField'
+                />
+              </div>
+              <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
+                <button type='button' className='navbarButton'>
+                  Forgot Password?
+                </button>
+                <button type='submit' className='navbarButton'>
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <DiscordWidget />
+        </div>
+      </article>
+      <Footer />
+    </section>
+  );
+}

@@ -112,7 +112,7 @@
 }
 
 .icons:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .dis:disabled {
@@ -121,4 +121,9 @@
 
 .dis:disabled:hover {
   color: #e5e6e6;
+}
+
+.inputField {
+  color: black;
+  padding: 0.1rem 0 0.1rem 0.5rem;
 }
