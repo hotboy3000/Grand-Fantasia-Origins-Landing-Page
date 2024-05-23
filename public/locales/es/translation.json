@@ -48,5 +48,14 @@
   "TEXT2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 2",
   "TEXT3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 3",
   "TEXT4": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius corrupti neque quasi hic aliquid alias ut, obcaecati esse enim? 4",
-  "Copyright": "© 2024 Grand Fantasia Origins - Todos los derechos reservados"
+  "Copyright": "© 2024 Grand Fantasia Origins - Todos los derechos reservados",
+  "usernameError": "Se requiere nombre de Usuario o Email",
+  "passwordErrorNone": "Se requiere una contraseña",
+  "passwordErrorLenght": "La contraseña debe tener al menos 8 caracteres",
+  "validationError": "Error de validación",
+  "loginTitle": "Iniciar sesión en Grand Fantasia Origins",
+  "usernameField": "Nombre de Usuario o Email",
+  "passwordField": "Contraseña",
+  "loginButton": "Iniciar sesión",
+  "forgotPassword": "¿Olvidaste tu contraseña?"
 }

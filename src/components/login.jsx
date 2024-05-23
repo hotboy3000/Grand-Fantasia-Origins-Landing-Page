@@ -4,11 +4,18 @@ import DiscordWidget from './discordWidget';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../css/navbar.css';
 
 const MySwal = withReactContent(Swal);
 
 export default function Login() {
+  const { t } = useTranslation();
+  const usernameError = t('usernameError');
+  const passwordErrorNone = t('passwordErrorNone');
+  const passwordErrorLenght = t('passwordErrorLenght');
+  const validationError = t('validationError');
+
   const [formData, setFormData] = useState({
     usernameOrEmail: '',
     password: ''
@@ -27,19 +34,22 @@ export default function Login() {
     let errorMessages = [];
 
     if (!formData.usernameOrEmail) {
-      errorMessages.push('Username or email is required');
+      errorMessages.push(usernameError);
       valid = false;
     }
 
-    if (formData.password.length < 8) {
-      errorMessages.push('Password must be at least 8 characters');
+    if (!formData.password) {
+      errorMessages.push(passwordErrorNone);
+      valid = false;
+    } else if (formData.password.length < 8) {
+      errorMessages.push(passwordErrorLenght);
       valid = false;
     }
 
     if (errorMessages.length > 0) {
       MySwal.fire({
         icon: 'error',
-        title: 'Validation Errors',
+        title: validationError,
         html: `<ul>${errorMessages
           .map((msg) => `<li>${msg}</li>`)
           .join('')}</ul>`,
@@ -73,7 +83,7 @@ export default function Login() {
         <div className='flex gap-4 justify-center items-center py-4'>
           <div className='h-[300px] flex flex-col items-center my-4 border-8 border-white w-fit'>
             <h1 className='px-4 py-2 w-full text-3xl text-white bg-navbar'>
-              Login to Grand Fantasia Origins
+              {t('loginTitle')}
             </h1>
 
             <hr className='w-full border-4 border-white' />
@@ -92,7 +102,7 @@ export default function Login() {
             >
               <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
                 <label htmlFor='usernameOrEmail' className='text-right'>
-                  Username or Email:
+                  {t('usernameField')}
                 </label>
                 <input
                   type='text'
@@ -105,7 +115,7 @@ export default function Login() {
               </div>
               <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
                 <label htmlFor='password' className='text-right'>
-                  Password:
+                  {t('passwordField')}
                 </label>
                 <input
                   type='password'
@@ -118,10 +128,10 @@ export default function Login() {
               </div>
               <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
                 <button type='button' className='navbarButton'>
-                  Forgot Password?
+                  {t('forgotPassword')}
                 </button>
                 <button type='submit' className='navbarButton'>
-                  Submit
+                  {t('loginButton')}
                 </button>
               </div>
             </form>
