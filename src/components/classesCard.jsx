@@ -24,7 +24,7 @@ export default function ClassesCard({
               <li>{path2}</li>
             </ul>
           </ul>
-          <div className='flex flex-col gap-2'>
+          <div className='flex flex-col gap-2 bg-navbar border-8 text-white border-white px-4 py-1 text-lg'>
             <span>
               {t('Hometown')}: {hometown}
             </span>

@@ -6,15 +6,75 @@ import '../css/features.css';
 export default function Features() {
   const { t } = useTranslation();
   const images = [
-    '/Random-1822.jpg',
-    '/Random-1822.jpg',
-    '/Random-1822.jpg',
-    '/Random-1822.jpg'
+    '/ClassShowcase.gif',
+    '/DngShowcase.gif',
+    '/CraftShowcase.gif',
+    '/GenkiShowcase.gif'
   ];
-  const text1 = t('TEXT1');
-  const text2 = t('TEXT2');
-  const text3 = t('TEXT3');
-  const text4 = t('TEXT4');
+  const text1 = (
+    <article>
+      <h1 className='pb-1 font-bold text-2xl'>{t('Feature1Title')}</h1>
+      <h2 className='pb-1'>{t('Feature1Description')}</h2>
+      <ul>
+        <li>
+          <span className='font-bold'>{t('Feature1ClassName1')}</span>
+          {t('Feature1ClassDescription1')}
+        </li>
+        <li>
+          <span className='font-bold'>{t('Feature1ClassName2')}</span>
+          {t('Feature1ClassDescription2')}
+        </li>
+      </ul>
+    </article>
+  );
+  const text2 = (
+    <article>
+      <h1 className='pb-1 font-bold text-2xl'>{t('Feature2Title')}</h1>
+      <h2 className='pb-1'>{t('Feature2Description')}</h2>
+      <ul>
+        <li className='pb-1'>
+          <span className='font-bold'>{t('Feature2Point1Title')}</span>
+          {t('Feature2Point1Description')}
+        </li>
+        <li>
+          <span className='font-bold'>{t('Feature2Point2Title')}</span>
+          {t('Feature2Point2Description')}
+        </li>
+      </ul>
+    </article>
+  );
+  const text3 = (
+    <article>
+      <h1 className='pb-1 font-bold text-2xl'>{t('Feature3Title')}</h1>
+      <h2 className='pb-1'>{t('Feature3Description')}</h2>
+      <ul>
+        <li className='pb-1'>
+          <span className='font-bold'>{t('Feature3Point1Title')}</span>
+          {t('Feature3Point1Description')}
+        </li>
+        <li>
+          <span className='font-bold'>{t('Feature3Point2Title')}</span>
+          {t('Feature3Point2Description')}
+        </li>
+      </ul>
+    </article>
+  );
+  const text4 = (
+    <article>
+      <h1 className='pb-1 font-bold text-2xl'>{t('Feature4Title')}</h1>
+      <h2 className='pb-1'>{t('Feature4Description')}</h2>
+      <ul>
+        <li className='pb-1'>
+          <span className='font-bold'>{t('Feature4Point1Title')}</span>
+          {t('Feature4Point1Description')}
+        </li>
+        <li>
+          <span className='font-bold'>{t('Feature4Point2Title')}</span>
+          {t('Feature4Point2Description')}
+        </li>
+      </ul>
+    </article>
+  );
   const texts = [text1, text2, text3, text4];
   const [currentIndex, setCurrentIndex] = useState(0);
   const isAnimating = useRef(false);
@@ -79,20 +139,17 @@ export default function Features() {
         </ul>
 
         {/* Images and Text */}
-        <ul className='p-2 h-[393px] bg-button'>
+        <ul className='p-2 bg-button'>
           {images.map((image, index) => (
             <li
               key={index}
-              className={`image ${currentIndex === index ? 'flex' : 'hidden'}`}
+              className={`image ${
+                currentIndex === index ? 'flex' : 'hidden'
+              } max-h-fit`}
               id={`image-${index}`}
             >
-              <img
-                src={image}
-                alt={`Image ${index + 1}`}
-                width={500}
-                height={500}
-              />
-              <p className='p-4 max-w-96 bg-button'>{texts[index]}</p>
+              <img src={image} alt={`Image ${index + 1}`} width={400} />
+              <p className='p-4 max-w-lg bg-button'>{texts[index]}</p>
             </li>
           ))}
         </ul>

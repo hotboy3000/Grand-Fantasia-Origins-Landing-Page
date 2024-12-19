@@ -32,8 +32,8 @@
 .mechanic {
   background-image: url('/classes/machinistbg.png');
   background-repeat: no-repeat;
-  background-position: 20px;
-  background-position-y: -5px;
+  background-position: -50px;
+  background-position-y: -25px;
   background-size: contain;
 }
 
