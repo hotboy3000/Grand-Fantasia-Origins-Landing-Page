@@ -68,7 +68,7 @@ export default function NavbarSecondary() {
   return (
     <section className='flex flex-col w-full max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
-        <Link href={'#'} className='navbarButton'>
+        <Link href={'/register'} className='navbarButton'>
           <li>{t('Register')}</li>
         </Link>
         <Link href={'/login'} className='navbarButton'>
@@ -145,17 +145,17 @@ export default function NavbarSecondary() {
           <Link href={'/'} className='hover:underline hover:drop-shadow-lg'>
             <li>{t('HomeNav')}</li>
           </Link>
-          <Link href='/#/news' className='hover:underline hover:drop-shadow-lg'>
+          <Link href='/#news' className='hover:underline hover:drop-shadow-lg'>
             <li>{t('NewsNav')}</li>
           </Link>
           <Link
-            href={'/#/classes'}
+            href={'/#classes'}
             className='hover:underline hover:drop-shadow-lg'
           >
             <li>{t('ClassesNav')}</li>
           </Link>
           <Link
-            href={'/#/features'}
+            href={'/#features'}
             className='hover:underline hover:drop-shadow-lg'
           >
             <li>{t('FeaturesNav')}</li>

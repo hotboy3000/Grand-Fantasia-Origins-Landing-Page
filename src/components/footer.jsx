@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'wouter';
 import '../css/navbar.css';
 
 export default function Footer() {
@@ -7,9 +8,9 @@ export default function Footer() {
   return (
     <footer className='flex flex-col w-full bg-white max-w-[1250px]'>
       <section className='flex justify-evenly p-4 bg-origins'>
-        <a href={'#'} className='p-2 text-2xl text-center Button'>
+        <Link href={'/register'} className='p-2 text-2xl text-center Button'>
           {t('Register')}
-        </a>
+        </Link>
         <a href={'#'} className='p-2 text-2xl text-center Button'>
           {t('Download')}
         </a>
@@ -24,7 +25,7 @@ export default function Footer() {
           <li>{t('Copyright')}</li>
           <ul className='flex gap-5'>
             <li>
-              <a target='_blank' href={'https://discord.gg/SjVYmebK6P'}>
+              <a target='_blank' href={'https://discord.gg/DUpgWc9Gg5'}>
                 <img
                   src={'/discord.svg'}
                   alt='discord'
@@ -48,7 +49,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={'#'}>
+              <a href={'https://www.youtube.com/@GFAwakening'}>
                 <img
                   src={'/youtube.svg'}
                   alt='twitter'

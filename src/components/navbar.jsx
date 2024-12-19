@@ -68,7 +68,7 @@ export default function Navbar() {
   return (
     <section className='flex flex-col w-full max-w-[1250px]'>
       <ul className='flex gap-2 justify-end py-2 w-full'>
-        <Link href={'#'} className='navbarButton'>
+        <Link href={'/register'} className='navbarButton'>
           <li>{t('Register')}</li>
         </Link>
         <Link href={'/login'} className='navbarButton'>
@@ -162,7 +162,7 @@ export default function Navbar() {
           </a>
           <ul className='flex gap-5 self-center'>
             <li>
-              <a target='_blank' href={'https://discord.gg/SjVYmebK6P'}>
+              <a target='_blank' href={'https://discord.gg/DUpgWc9Gg5'}>
                 <img
                   src={'/discord.svg'}
                   alt='discord'
@@ -186,7 +186,7 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a target='_blank' href={'#'}>
+              <a target='_blank' href={'https://www.youtube.com/@GFAwakening'}>
                 <img
                   src={'/youtube.svg'}
                   alt='twitter'

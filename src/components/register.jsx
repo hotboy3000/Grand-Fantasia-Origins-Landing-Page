@@ -9,16 +9,23 @@ import '../css/navbar.css';
 
 const MySwal = withReactContent(Swal);
 
-export default function Login() {
+export default function Register() {
   const { t } = useTranslation();
-  const usernameError = t('usernameError');
+  const usernameRegisterError = t('usernameRegisterError');
+  const emailErrorInvalid = t('emailErrorInvalid');
+  const emailErrorNone = t('emailErrorNone');
   const passwordErrorNone = t('passwordErrorNone');
   const passwordErrorLength = t('passwordErrorLength');
+  const passwordErrorSymbol = t('passwordErrorSymbol');
+  const passwordErrorNumber = t('passwordErrorNumber');
+  const confirmPasswordError = t('confirmPasswordError');
   const validationError = t('validationError');
 
   const [formData, setFormData] = useState({
-    usernameOrEmail: '',
-    password: ''
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
   });
 
   const handleChange = (e) => {
@@ -29,20 +36,53 @@ export default function Login() {
     });
   };
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validatePassword = (password) => {
+    const lengthCheck = password.length >= 8;
+    const symbolCheck = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const numberCheck = /[0-9]/.test(password);
+    return lengthCheck && symbolCheck && numberCheck;
+  };
+
   const validateForm = () => {
     let valid = true;
     let errorMessages = [];
 
-    if (!formData.usernameOrEmail) {
-      errorMessages.push(usernameError);
+    if (!formData.username) {
+      errorMessages.push(usernameRegisterError);
+      valid = false;
+    }
+
+    if (!formData.email) {
+      errorMessages.push(emailErrorNone);
+      valid = false;
+    } else if (!validateEmail(formData.email)) {
+      errorMessages.push(emailErrorInvalid);
       valid = false;
     }
 
     if (!formData.password) {
       errorMessages.push(passwordErrorNone);
       valid = false;
-    } else if (formData.password.length < 8) {
-      errorMessages.push(passwordErrorLength);
+    } else if (!validatePassword(formData.password)) {
+      if (formData.password.length < 8) {
+        errorMessages.push(passwordErrorLength);
+      }
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(formData.password)) {
+        errorMessages.push(passwordErrorSymbol);
+      }
+      if (!/[0-9]/.test(formData.password)) {
+        errorMessages.push(passwordErrorNumber);
+      }
+      valid = false;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      errorMessages.push(confirmPasswordError);
       valid = false;
     }
 
@@ -81,34 +121,39 @@ export default function Login() {
       <NavbarSecondary />
       <article className='my-5 w-full border-8 border-white bg-background'>
         <div className='flex gap-4 justify-center items-center py-4'>
-          <div className='h-[300px] flex flex-col items-center my-4 border-8 border-white w-fit'>
+          <div className='h-[306.4px] flex flex-col items-center my-4 border-8 border-white w-fit'>
             <h1 className='px-4 py-2 w-full text-3xl text-white bg-navbar'>
-              {t('loginTitle')}
+              {t('registerTitle')}
             </h1>
-
-            <hr className='w-full border-4 border-white' />
-
-            <article className='flex gap-4 p-2'>
-              <button className='navbarButton'>Login with Discord</button>
-              <button className='navbarButton'>Login with Google</button>
-              <button className='navbarButton'>Login with Twitter</button>
-            </article>
 
             <hr className='w-full border-4 border-white' />
 
             <form
               onSubmit={handleSubmit}
-              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-xl text-white bg-navbar'
+              className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full text-xl text-white bg-navbar'
             >
               <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
-                <label htmlFor='usernameOrEmail' className='text-right'>
-                  {t('usernameField')}
+                <label htmlFor='username' className='text-right'>
+                  {t('usernameRegister')}
                 </label>
                 <input
                   type='text'
-                  id='usernameOrEmail'
-                  name='usernameOrEmail'
-                  value={formData.usernameOrEmail}
+                  id='username'
+                  name='username'
+                  value={formData.username}
+                  onChange={handleChange}
+                  className='inputField'
+                />
+              </div>
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+                <label htmlFor='email' className='text-right'>
+                  {t('emailField')}
+                </label>
+                <input
+                  type='text'
+                  id='email'
+                  name='email'
+                  value={formData.email}
                   onChange={handleChange}
                   className='inputField'
                 />
@@ -126,12 +171,25 @@ export default function Login() {
                   className='inputField'
                 />
               </div>
+              <div className='grid relative grid-cols-2 gap-3 pr-4 w-full'>
+                <label htmlFor='confirmPassword' className='text-right'>
+                  {t('confirmPasswordField')}
+                </label>
+                <input
+                  type='password'
+                  id='confirmPassword'
+                  name='confirmPassword'
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className='inputField'
+                />
+              </div>
               <div className='grid grid-cols-2 gap-3 pr-4 mt-2 w-full'>
-                <button type='button' className='navbarButton'>
-                  {t('forgotPassword')}
-                </button>
                 <button type='submit' className='navbarButton'>
                   {t('loginButton')}
+                </button>
+                <button type='submit' className='navbarButton'>
+                  {t('registerButton')}
                 </button>
               </div>
             </form>

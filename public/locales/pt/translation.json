@@ -51,7 +51,7 @@
   "Copyright": "© 2024 Grand Fantasia Origins – Todos os direitos reservados",
   "usernameError": "Nome de Usuário ou e-mail é obrigatório",
   "passwordErrorNone": "Senha é obrigatória",
-  "passwordErrorLenght": "A senha deve ter pelo menos 8 caracteres",
+  "passwordErrorLength": "A senha deve ter pelo menos 8 caracteres",
   "validationError": "Erro de validação",
   "loginTitle": "Entrar no Grand Fantasia Origins",
   "usernameField": "Nome de Usuário ou e-mail",
