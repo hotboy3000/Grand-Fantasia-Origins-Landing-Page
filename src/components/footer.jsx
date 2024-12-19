@@ -37,7 +37,10 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={'#'}>
+              <a
+                target='_blank'
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}
+              >
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'

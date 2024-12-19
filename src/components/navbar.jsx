@@ -174,7 +174,10 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a target='_blank' href={'#'}>
+              <a
+                target='_blank'
+                href={'https://www.instagram.com/grand.fantasia.awakening/'}
+              >
                 <img
                   src={'/instagram.svg'}
                   alt='instagram'

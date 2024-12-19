@@ -88,14 +88,6 @@ export default function Login() {
 
             <hr className='w-full border-4 border-white' />
 
-            <article className='flex gap-4 p-2'>
-              <button className='navbarButton'>Login with Discord</button>
-              <button className='navbarButton'>Login with Google</button>
-              <button className='navbarButton'>Login with Twitter</button>
-            </article>
-
-            <hr className='w-full border-4 border-white' />
-
             <form
               onSubmit={handleSubmit}
               className='flex flex-col gap-3 justify-center items-center px-4 py-2 w-full h-full text-xl text-white bg-navbar'

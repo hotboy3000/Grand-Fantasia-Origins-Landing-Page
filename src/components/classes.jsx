@@ -105,7 +105,7 @@ export default function Classes() {
             path2={t('ENGINEER')}
             job={t('MECHANIC')}
             image={'/classes/mechanic.png'}
-            hometown={'Jale'}
+            hometown={t('HometownGS')}
             description={t('ClassDescMechanic')}
           />
         </article>
