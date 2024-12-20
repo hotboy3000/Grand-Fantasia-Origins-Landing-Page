@@ -19,15 +19,13 @@ export default function NewsCard({
         className='self-center w-full'
       />
       <div className='flex flex-col justify-between h-full'>
-        <div>
-          <h1 className='py-2 text-3xl font-bold'>{title}</h1>
-          <p>{description}</p>
-        </div>
-        <span className='text-blue-700 align-bottom'>
-          <Link target='_blank' href={link}>
+        <h1 className='py-2 text-3xl font-bold'>{title}</h1>
+        <p>{description}</p>
+        <div className='text-blue-700 mt-auto'>
+          <a target='_blank' href={link}>
             {linkText}
-          </Link>
-        </span>
+          </a>
+        </div>
         <span className='px-1 mt-1 text-white date text-md bg-navbar'>
           {date}
         </span>

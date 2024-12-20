@@ -17,28 +17,26 @@ export default function News() {
         <NewsCard
           title={t('Title')}
           description={t('Description')}
-          image={'/DancingGM.gif'}
+          image={'/KissEmote.gif'}
           date={'18/12/2024'}
-          link={'/patchNotes'}
-          linkText={'Read them here'}
+          link={t('link')}
+          linkText={t('linkText')}
         />
         <NewsCard
           title={t('Title1')}
           description={t('Description1')}
-          image={'/SuprisedEmote.gif'}
+          image={'/DancingGM.gif'}
           date={'15/12/2024'}
-          link={'https://forms.gle/L6DU7qiZAS3szfCF9'}
-          linkText={'Check it out'}
+          link={t('link1')}
+          linkText={t('linkText1')}
         />
         <NewsCard
           title={t('Title2')}
           description={t('Description2')}
-          image={'/KissEmote.gif'}
+          image={'/SuprisedEmote.gif'}
           date={'12/12/12'}
-          link={
-            'https://discord.com/channels/1194037105156964437/1199110447090122792/1314291726286061690'
-          }
-          linkText={'Check it out'}
+          link={t('link2')}
+          linkText={t('linkText2')}
         />
       </article>
     </section>
