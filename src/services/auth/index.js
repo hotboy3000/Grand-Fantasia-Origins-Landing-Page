@@ -16,14 +16,8 @@ export const postRegister = async ({ username, email, password }) => {
 };
 
 export const getVerify = async ({ token }) => {
-  try {
-    const response = await axiosInstance.get("/auth/verify", {
-      params: { token },
-    });
-    console.log("verify Successful:", response.data);
-    return response.data;
-  } catch (error) {
-    console.log("Error:", error.response ? error.response.data : error.message);
-    return error;
-  }
+  const response = await axiosInstance.get("/auth/verify", {
+    params: { token },
+  });
+  return response.data; // Let the caller handle any response logic
 };

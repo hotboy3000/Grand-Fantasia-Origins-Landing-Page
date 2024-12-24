@@ -1,25 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, Link } from "wouter";
 import "../../css/global.css";
+import { getVerify } from "../../services/auth";
 
 export default function MailVerification() {
-  const [status, setStatus] = useState("loading"); // 'loading', 'success', 'error' (change this for different states or constants values)
+  const [status, setStatus] = useState("loading"); // 'loading', 'success', 'error' TO-DO: Change this to constants or differents states
   const [message, setMessage] = useState("");
-  const location = useLocation();
+  const [token, setToken] = useState(null);
+  const [isTokenExtracted, setIsTokenExtracted] = useState(false); // Track token extraction
 
-  // Extract the token from the URL
-  const token = location[1].split("?")[2]; // test this code
-
+  // Extract token from the query parameters
   useEffect(() => {
-    // Call the verification API when the page is loaded
-    if (token) {
-      verifyEmail();
-    } else {
-      setStatus("error");
-      setMessage("Invalid or missing verification token.");
-    }
-  }, [token]);
+    const queryParams = new URLSearchParams(window.location.search);
+    const tokenFromQuery = queryParams.get("token");
+    setToken(tokenFromQuery);
+    setIsTokenExtracted(true); // Mark token extraction as complete
+  }, []);
 
+  // Handle verification API call
+  const handleVerification = async (token) => {
+    try {
+      const result = await getVerify({ token });
+      if (result) {
+        setStatus("success");
+        setMessage("Your email has been successfully verified!");
+      }
+    } catch (error) {
+      setStatus("error");
+      setMessage(
+        error.response?.data?.message || "An error occurred. Please try again."
+      );
+    }
+  };
+
+  // Trigger verification when token is available
+  useEffect(() => {
+    if (isTokenExtracted) {
+      if (token) {
+        handleVerification(token);
+      } else {
+        setStatus("error");
+        setMessage("Invalid or missing verification token.");
+      }
+    }
+  }, [token, isTokenExtracted]);
+
+  //Change styles becasuse pls
   return (
     <section className="center-container">
       <div className="verification-box">

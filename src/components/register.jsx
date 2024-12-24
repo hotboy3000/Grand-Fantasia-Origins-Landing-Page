@@ -53,7 +53,7 @@ export default function Register() {
   const validateForm = () => {
     let valid = true;
     let errorMessages = [];
-    console.log(formData);
+
     if (!formData.username) {
       errorMessages.push(usernameRegisterError);
       valid = false;
@@ -110,10 +110,7 @@ export default function Register() {
 
   const handleRegister = async () => {
     try {
-      console.log("Registration try:", formData);
-
       const result = await postRegister(formData);
-      console.log("successful:", result);
     } catch (error) {
       console.error("Error:", error.response?.data || error.message);
     }
@@ -121,7 +118,7 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister();
+    handleRegister(); //this should be called in the validateForm() check bellow, but there is an error with that function
     if (validateForm()) {
       console.log("Form data submitted:", formData);
       handleRegister();
