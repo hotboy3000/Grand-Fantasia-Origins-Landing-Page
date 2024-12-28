@@ -15,9 +15,22 @@ export const postRegister = async ({ username, email, password }) => {
   }
 };
 
-export const getVerify = async ({ token }) => {
-  const response = await axiosInstance.get("/auth/verify", {
-    params: { token },
-  });
-  return response.data; // Let the caller handle any response logic
+export const getVerify = async (token) => {
+  try {
+    const response = await axiosInstance.get("/auth/verify", {
+      params: { token },
+    });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Verification failed");
+  }
+};
+
+export const postLogin = async ({ username, password }) => {
+  try {
+    const response = await axiosInstance.post("/login", { username, password });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || new Error("Verification failed");
+  }
 };

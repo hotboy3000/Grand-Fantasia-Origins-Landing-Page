@@ -22,16 +22,12 @@ export default function MailVerification() {
 
   const handleVerification = async (token) => {
     try {
-      const result = await getVerify({ token });
-      if (result) {
-        setStatus(statuses.SUCCESS);
-        setMessage(t("VerificationPage.successMessage"));
-      }
+      await getVerify(token);
+      setStatus(statuses.SUCCESS);
+      setMessage(t("VerificationPage.successMessage"));
     } catch (error) {
       setStatus(statuses.ERROR);
-      setMessage(
-        error.response?.data?.message || t("VerificationPage.errorMessage")
-      );
+      setMessage(error.message || t("VerificationPage.errorMessage"));
     }
   };
 
